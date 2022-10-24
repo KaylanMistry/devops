@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: kaylan-server-deployment
+  labels:
+    tier: front-end
+spec:
+  containers:
+  - name: kaylan-server
+    image: kaylanmistry/kaylan-server
+    ports:
+      - containerPort: 80

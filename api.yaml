@@ -1,0 +1,42 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+
+  name: kaylan-server-deployment
+
+  labels:
+
+    app: kaylan-server
+
+spec:
+
+  replicas: 3
+
+  selector:
+
+    matchLabels:
+
+      app: kaylan-server
+
+  template:
+
+    metadata:
+
+      labels:
+
+        app: kaylan-server
+
+    spec:
+
+      containers:
+
+      - name: kaylan-server
+
+        image: kaylanmistry/kaylan-server
+        imagePullPolicy: Always
+
+        ports:
+
+        - containerPort: 80
